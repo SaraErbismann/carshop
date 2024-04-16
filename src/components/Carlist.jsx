@@ -3,6 +3,7 @@ import { AgGridReact } from 'ag-grid-react';
 import "ag-grid-community/styles/ag-grid.css"; 
 import "ag-grid-community/styles/ag-theme-material.css"; 
 import { Button } from "@mui/material";
+import { getCars } from "../carAPI";
 
 export default function Carlist() {
     
@@ -26,14 +27,7 @@ export default function Carlist() {
     }, []);
     
     const fetchCars = () => {
-        fetch('https://carrestservice-carshop.rahtiapp.fi/cars')
-        .then(response => {
-            if(!response.ok) {
-                throw new Error("Error in fetch: " + response.statusText);
-            } else {
-                return response.json();
-            }
-        })
+        getCars()
         .then(data => setCars(data._embedded.cars)) // koska data tulee muodossa: _embedded -> cars -> data
         .catch((err) => console.error(err));
     }

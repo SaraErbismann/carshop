@@ -5,6 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 function App() {
+
+  console.log(import.meta.env.VITE_API_URL);
   
   return (
     <Container maxWidth="xl">
