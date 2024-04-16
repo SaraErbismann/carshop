@@ -13,10 +13,10 @@ export default function Carlist() {
 
     const [colDefs] = useState ([
         { field: 'brand', filter: true},
-        { field: 'model', filter: true},
-        { field: 'color', filter: true},
+        { field: 'model', filter: true, width: 120},
+        { field: 'color', filter: true, width: 100},
         { field: 'fuel', filter: true, width: 100},
-        { field: 'modelYear', filter: true, width: 100},
+        { field: 'modelYear', filter: true},
         { field: 'price', filter: true},
         { cellRenderer: params => <EditCar data={params.data} updateCar={updateCar} />, width: 120 },
         { cellRenderer: params => 
