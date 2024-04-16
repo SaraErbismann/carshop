@@ -6,12 +6,12 @@ import Typography from '@mui/material/Typography';
 
 function App() {
 
-  console.log(import.meta.env.VITE_API_URL);
+
   
   return (
     <Container maxWidth="xl">
-      <AppBar>
-        <Toolbar position="static">
+      <AppBar position="static">
+        <Toolbar >
           <Typography variant='h6'>Car shop</Typography>
         </Toolbar>
       </AppBar>

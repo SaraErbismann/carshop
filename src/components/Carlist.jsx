@@ -4,6 +4,7 @@ import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-material.css"; 
 import { Button } from "@mui/material";
 import { getCars } from "../carAPI";
+import AddCar from "./AddCar";
 
 export default function Carlist() {
     
@@ -47,9 +48,27 @@ export default function Carlist() {
         }
     }
 
+    const addCar = (newCar) => {
+        fetch(import.meta.env.VITE_API_URL, {
+            method: 'POST',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify(newCar)
+        })
+        .then(response => {
+            if(!response.ok) {
+                throw new Error("Error when adding a new car");
+            } else {
+                return response.json();
+            } 
+        })
+        .then(() => fetchCars())
+        .catch(err => console.error(err))
+    }
+
     return(
         <>
-        <div className="ag-theme-material" style={{ height: 600, marginTop: 55 }}>
+        <AddCar addCar={addCar}/>
+        <div className="ag-theme-material" >
             <AgGridReact
                 rowData={cars}
                 columnDefs={colDefs}
