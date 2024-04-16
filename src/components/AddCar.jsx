@@ -41,7 +41,7 @@ export default function AddCar({addCar}) {
 
     return (
         <>
-        <Button variant='outlined' onClick={handleClickOpen} sx={{ margin: '5px' }}>Add car</Button>
+        <Button size='large' variant='contained' onClick={handleClickOpen} sx={{ margin: '8px' }}>Add car</Button>
         <Dialog
         open={open}
         onClose={handleClickClose}
