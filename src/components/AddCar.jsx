@@ -24,6 +24,14 @@ export default function AddCar({addCar}) {
 
     const handleClickClose = () => {
         setOpen(false);
+        setCar({
+            brand: '',
+            model: '',
+            color: '',
+            fuel: '',
+            modelYear: '',
+            price: ''
+        });
     }
 
     const handleClickSave = () => {
@@ -33,7 +41,7 @@ export default function AddCar({addCar}) {
 
     return (
         <>
-        <Button variant='outlined' onClick={handleClickOpen}>Add car</Button>
+        <Button variant='outlined' onClick={handleClickOpen} sx={{ margin: '5px' }}>Add car</Button>
         <Dialog
         open={open}
         onClose={handleClickClose}
