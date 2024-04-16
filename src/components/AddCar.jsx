@@ -54,7 +54,7 @@ export default function AddCar({addCar}) {
             required
             margin='dense'
             label='Model'
-            value={car.brand}
+            value={car.model}
             onChange={e => setCar({...car, model: e.target.value})}
             fullWidth
             variant='standard'
@@ -63,7 +63,7 @@ export default function AddCar({addCar}) {
             required
             margin='dense'
             label='Color'
-            value={car.brand}
+            value={car.color}
             onChange={e => setCar({...car, color: e.target.value})}
             fullWidth
             variant='standard'
@@ -72,7 +72,7 @@ export default function AddCar({addCar}) {
             required
             margin='dense'
             label='Fuel'
-            value={car.brand}
+            value={car.fuel}
             onChange={e => setCar({...car, fuel: e.target.value})}
             fullWidth
             variant='standard'
@@ -81,7 +81,7 @@ export default function AddCar({addCar}) {
             required
             margin='dense'
             label='Year'
-            value={car.brand}
+            value={car.modelYear}
             onChange={e => setCar({...car, modelYear: e.target.value})}
             fullWidth
             variant='standard'
@@ -90,7 +90,7 @@ export default function AddCar({addCar}) {
             required
             margin='dense'
             label='Price'
-            value={car.brand}
+            value={car.price}
             onChange={e => setCar({...car, price: e.target.value})}
             fullWidth
             variant='standard'

@@ -49,6 +49,7 @@ export default function Carlist() {
     }
 
     const addCar = (newCar) => {
+        console.log(newCar);
         fetch(import.meta.env.VITE_API_URL, {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
@@ -68,7 +69,7 @@ export default function Carlist() {
     return(
         <>
         <AddCar addCar={addCar}/>
-        <div className="ag-theme-material" >
+        <div className="ag-theme-material" style={{ height: 600 }}>
             <AgGridReact
                 rowData={cars}
                 columnDefs={colDefs}
